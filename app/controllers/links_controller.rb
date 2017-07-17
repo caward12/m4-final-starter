@@ -6,7 +6,7 @@ class LinksController < ApplicationController
 
   def index
     @link = Link.new
-    @links = current_user.links
+    @links = current_user.links.reverse
   end
 
   def create

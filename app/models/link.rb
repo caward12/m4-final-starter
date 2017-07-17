@@ -14,4 +14,8 @@ class Link < ActiveRecord::Base
   def validate_url
     errors.add(:url, 'Not a Valid URL') unless valid_url?
   end
+
+  def self.reverse
+    order('id DESC')
+  end
 end
