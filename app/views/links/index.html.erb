@@ -10,8 +10,9 @@
 </div>
 <hr>
 
-<%= @links.each do |link| %>
-  <h3>Title: <%= link.title %></h3>
-  URL: <%= link.url %>
-  Read: <%= link.read %>
-<% end %>
+<h2>My Links</h2>
+<div class="links">
+  <% @links.each do |link| %>
+  <%= render partial: 'link', locals: {link: link} %>
+  <% end %>
+</div>

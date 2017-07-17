@@ -17,4 +17,16 @@ describe "links index" do
     expect(page).to have_content("http://turing.io")
     expect(page).to have_content("Read: false")
   end
+
+  it "registered user cannot add invalide link url" do
+    user = User.create(email: "test@test.com", password: "1234", password_confirmation: "1234")
+    login_user(user)
+
+    fill_in "link[url]", with: "turing.io"
+    fill_in "link[title]", with: "turing"
+    click_on "Add Link"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Not a Valid URL")
+  end
 end

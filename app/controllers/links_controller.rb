@@ -16,7 +16,8 @@ class LinksController < ApplicationController
       flash[:success] = "Successfully added a new link"
       redirect_to root_path
     else
-      flash[:notice] = link.errors.full_messages
+      flash[:notice] = link.errors.full_messages.first
+      binding.pry
       redirect_to root_path
     end
   end

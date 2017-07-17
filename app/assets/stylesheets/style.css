@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+}
+
+.link {
+  width: 250px;
+  height: 150px;
+  border-style: solid;
+  padding: 10px;
+  margin: 10px;
+}
