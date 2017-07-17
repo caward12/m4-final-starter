@@ -23,8 +23,8 @@ function postLink() {
        postLink();
    });
   }
+
   $(document).ready(function(){
     bindSubmitListenerAndPostLink()
-
   })
 

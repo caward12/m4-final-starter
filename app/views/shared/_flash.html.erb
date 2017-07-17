@@ -1,9 +1,7 @@
 <div class="container">
   <% flash.each do |type, message| %>
     <% if message %>
-      <div class="alert">
         <p><%= message %></p>
-      </div>
     <% end %>
   <% end %>
 </div>

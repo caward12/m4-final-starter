@@ -9,3 +9,8 @@ body {
   padding: 10px;
   margin: 10px;
 }
+
+.read {
+  background-color: grey;
+  text-decoration: line-through;
+}

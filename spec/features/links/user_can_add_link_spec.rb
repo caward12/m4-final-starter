@@ -13,6 +13,7 @@ describe "links index", :js => :true do
     click_on "Add Link"
 
     expect(current_path).to eq(root_path)
+    expect(page).to have_content("Successfully added a new link")
     expect(page).to have_content("turing")
     expect(page).to have_content("http://turing.io")
     expect(page).to have_content("Read: false")
