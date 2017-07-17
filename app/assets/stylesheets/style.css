@@ -12,5 +12,5 @@ body {
 
 .read {
   background-color: grey;
-  text-decoration: line-through;
+  color: white;
 }

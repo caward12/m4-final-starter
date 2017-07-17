@@ -5,6 +5,7 @@
     Read: <%= link.read %><br>
   </div>
   <% if link.read == false %>
+  <div class="read-links">
     <div class="mark-as-read">
       <%= link_to "Mark as Read", "/" %>
     </div>
@@ -13,6 +14,7 @@
       <%= link_to "Mark as Unread", "/" %>
     </div>
     <% end %>
+  </div>
 
 </div>
 
