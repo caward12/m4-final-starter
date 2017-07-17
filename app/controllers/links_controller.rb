@@ -14,10 +14,9 @@ class LinksController < ApplicationController
     link = @user.links.new(link_params)
     if link.save
       flash[:success] = "Successfully added a new link"
-      redirect_to root_path
+      render partial: "links/link", locals: {link: link}, layout: false
     else
       flash[:notice] = link.errors.full_messages.first
-      binding.pry
       redirect_to root_path
     end
   end

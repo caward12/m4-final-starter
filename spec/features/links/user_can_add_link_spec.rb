@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "links index" do
+describe "links index", :js => :true do
   it "registered user can add new link with valid url" do
     user = User.create(email: "test@test.com", password: "1234", password_confirmation: "1234")
 
