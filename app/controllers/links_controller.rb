@@ -10,5 +10,20 @@ class LinksController < ApplicationController
   end
 
   def create
+    @user = current_user
+    link = @user.links.new(link_params)
+    if link.save
+      flash[:success] = "Successfully added a new link"
+      redirect_to root_path
+    else
+      flash[:notice] = link.errors.full_messages
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def link_params
+    params.require(:link).permit(:url, :title)
   end
 end
