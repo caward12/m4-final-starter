@@ -1,7 +1,7 @@
 <div class="link <%= link.read %>" data-link-id=<%= link.id %>>
   <%= link_to "Edit", edit_link_path(link) %>
-  <h3>Title: <%= link.title %></h3>
-  URL: <%= link.url %><br>
+    <h3 class="title">Title: <%= link.title %></h3>
+    <h4 class="url">URL: <%= link.url %></h4><br>
   <div class="read-status">
     Read: <%= link.read %><br>
   </div>
