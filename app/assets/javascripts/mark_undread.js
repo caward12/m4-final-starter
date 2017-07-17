@@ -19,7 +19,8 @@ function updateReadLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(`Read: ${link.read}`)
   $(`.link[data-link-id=${link.id}] .read-links .mark-unread`).remove()
   $(`.link[data-link-id=${link.id}]`).find(".read-links").append('<div class="mark-as-read"><a href="/"> Mark as Read</a></div>')
-  $(`.link[data-link-id=${link.id}]`).removeClass("read")
+  $(`.link[data-link-id=${link.id}]`).removeClass("true")
+  $(`.link[data-link-id=${link.id}]`).addClass("false")
 }
 
 function displayFailure(failureData){
