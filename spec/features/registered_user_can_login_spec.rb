@@ -7,7 +7,6 @@ describe "registerd user" do
 
     fill_in "session[email]", with: "test@test.com"
     fill_in "session[password]", with: "1234"
-    fill_in "session[password_confirmation]", with: "1234"
     click_on "Log In"
 
     expect(current_path).to eq(root_path)
