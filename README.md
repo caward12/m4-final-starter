@@ -10,6 +10,10 @@ A user, once logged in can add new links with a valid url and a title (a link mu
 
 Production site: https://salty-ravine-23588.herokuapp.com/
 
+log in as existing user:
+email: me@me.com
+password: password 
+
 ### Setup
 1. clone this repo
 2. bundle
