@@ -7,6 +7,8 @@ describe "filter links", :js => :true do
     user.links.create(url: "https://www.target.com/", title: "Target", read: true)
     user.links.create(url: "https://www.walmart.com/", title: "walmart" )
 
+    login_user(user)
+    
     fill_in "q", with: "t"
 
     expect(page).to have_content("turing")
