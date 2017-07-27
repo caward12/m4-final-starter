@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render partial: "shared/flash" %>
+  <% if notice.present? %>
+    <%= render partial: "shared/flash" %>
+  <% end %>
 <div class="container">
 
   <%= yield %>

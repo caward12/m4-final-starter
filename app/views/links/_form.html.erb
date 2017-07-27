@@ -1,0 +1,13 @@
+<h4>Add a New Link</h4>
+
+<%= form_for @link do |f| %>
+
+<%= f.label :url %>
+<%= f.text_field :url %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.submit "Add Link", class: "add-new-link"%>
+
+<% end %>

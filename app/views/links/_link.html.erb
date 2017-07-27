@@ -1,0 +1,28 @@
+<div class="container">
+  <% flash.each do |type, message| %>
+    <% if message %>
+        <p><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="link <%= link.read %>" data-link-id=<%= link.id %>>
+  <%= link_to "Edit", edit_link_path(link) %>
+    <h3 class="title">Title: <%= link.title %></h3>
+    <h4 class="url">URL: <%= link.url %></h4><br>
+  <div class="read-status">
+    Read: <%= link.read %><br>
+  </div>
+  <% if link.read == false %>
+  <div class="read-links">
+    <div class="mark-as-read">
+      <%= link_to "Mark as Read", "/" %>
+    </div>
+    <% else %>
+    <div class="mark-unread">
+      <%= link_to "Mark as Unread", "/" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+

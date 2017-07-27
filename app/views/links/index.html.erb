@@ -4,3 +4,26 @@
 <%= link_to "Sign Up", new_user_path  %>
 <%= link_to "Sign In", login_path %>
 <% end %>
+
+<div class="new-link">
+  <%= render partial: "form" %>
+</div>
+<hr>
+<div class="filter">
+  <h3>Filters</h3>
+
+  <%= form_tag("/", method: "get", class: "filter-links") do %>
+    <%= label_tag(:q, "filter for:") %>
+    <%= text_field_tag(:q) %>
+  <% end %>
+  <%= link_to "Show Read" , "/", class: "show-read"%> &nbsp &nbsp
+  <%= link_to "Show Unread" , "/", class: "show-unread"%>
+  <hr>
+</div>
+
+<h2>My Links</h2>
+<div class="links">
+  <% @links.each do |link| %>
+  <%= render partial: 'link', locals: {link: link} %>
+  <% end %>
+</div>
