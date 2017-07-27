@@ -28,7 +28,7 @@ URL Lock Box works in conjunction with Hot Reads to identify "hot links" - the t
 
 Hot Reads repo: https://github.com/caward12/hot_reads
 
-Hot Reads production:
+Hot Reads production: https://pacific-earth-63717.herokuapp.com/
 
 #### Final Assessment
 
