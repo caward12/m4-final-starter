@@ -8,13 +8,7 @@
 
 <div class="link <%= link.read %>" data-link-id=<%= link.id %>>
   <%= link_to "Edit", edit_link_path(link) %>
-  <% if link.url == @hot_reads[0] %>
-    <h5 class="top">TOP LINK</h5>
-  <% elsif @hot_reads.include?(link.url) %>
-    <h5 class="hot">HOT</h5>
-  <% else %>
-    <h5></h5>
-  <% end %>
+    <h5 class="<%=link.status.split(" ")[0]%>"><%= link.status %></h5>
     <h3 class="title">Title: <%= link.title %></h3>
     <h4 class="url">URL: <%= link.url %></h4><br>
   <div class="read-status">

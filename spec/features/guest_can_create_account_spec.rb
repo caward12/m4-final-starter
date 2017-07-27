@@ -16,6 +16,7 @@ describe "guest user" do
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content("Sign Up")
     expect(page).to have_content("Sign Out")
+    expect(page).to have_content("Successfully created account!")
   end
 
   it "cannot create account without email" do
