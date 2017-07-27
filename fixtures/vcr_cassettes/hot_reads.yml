@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3001/api/v1/links
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"be6404064363a868b65afb94d79df404"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6903c2c7-2176-4d92-b196-515608daa6cb
+      X-Runtime:
+      - '0.004422'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"url":"https://www.target.com/","read_count":3,"created_at":"2017-07-27T16:20:11.470Z","updated_at":"2017-07-27T17:43:58.678Z"},{"id":2,"url":"http://turing.io","read_count":2,"created_at":"2017-07-27T16:20:33.342Z","updated_at":"2017-07-27T16:40:39.158Z"},{"id":6,"url":"https://unsplash.com/","read_count":2,"created_at":"2017-07-27T17:41:40.329Z","updated_at":"2017-07-27T17:43:24.081Z"},{"id":3,"url":"http://www.npr.org/","read_count":1,"created_at":"2017-07-27T16:42:10.463Z","updated_at":"2017-07-27T16:42:10.482Z"},{"id":4,"url":"https://www.stlouis-mo.gov/","read_count":1,"created_at":"2017-07-27T17:36:07.534Z","updated_at":"2017-07-27T17:36:07.557Z"},{"id":5,"url":"https://www.denver.com/","read_count":1,"created_at":"2017-07-27T17:41:21.700Z","updated_at":"2017-07-27T17:41:21.723Z"}]'
+    http_version: 
+  recorded_at: Thu, 27 Jul 2017 18:23:04 GMT
+recorded_with: VCR 3.0.3

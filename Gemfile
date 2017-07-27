@@ -17,6 +17,7 @@ gem 'sprockets-es6'
 gem 'bcrypt', '~> 3.1.7'
 gem 'validate_url'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'faraday'
 # gem 'unicorn'
 
 # gem 'capistrano-rails', group: :development
@@ -37,4 +38,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'selenium-webdriver', '~> 2.53.4'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
