@@ -22,6 +22,6 @@
 <h2>My Links</h2>
 <div class="links">
   <% @links.each do |link| %>
-  <%= render partial: 'link', locals: {link: link, hot_reads: @hot_reads} %>
+  <%= render partial: 'link', locals: {link: link} %>
   <% end %>
 </div>

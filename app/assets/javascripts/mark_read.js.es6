@@ -22,7 +22,7 @@ function markAsRead(e) {
 function postToHotReads(url){
   $.ajax({
     type: "POST",
-    url: "http://localhost:3001/api/v1/links",
+    url: "https://pacific-earth-63717.herokuapp.com/api/v1/links",
     data: {url: url}
   })
 }
