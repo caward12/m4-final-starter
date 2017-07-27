@@ -10,6 +10,9 @@ function bindShowReadButtonWithFilterLinks(){
 }
 
 function filterReadLinks(){
+  $(".true").each(function(){
+    $(this).show()
+  })
   $(".false").each(function(){
     $(this).hide()
   })

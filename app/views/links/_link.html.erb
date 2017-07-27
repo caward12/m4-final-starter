@@ -1,3 +1,11 @@
+<div class="container">
+  <% flash.each do |type, message| %>
+    <% if message %>
+        <p><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="link <%= link.read %>" data-link-id=<%= link.id %>>
   <%= link_to "Edit", edit_link_path(link) %>
     <h3 class="title">Title: <%= link.title %></h3>

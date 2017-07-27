@@ -14,10 +14,10 @@ class LinksController < ApplicationController
     link = @user.links.new(link_params)
     if link.save
       flash.now[:success] = "Successfully added a new link"
-      render partial: "links/link", locals: {link: link}, layout: false
+      render partial: "link", locals: {link: link}, layout: false
     else
-      flash.now[:notice] = link.errors.full_messages.first
-      redirect_to root_path
+      flash.now[:notice] = link.errors.full_messages.join(", ")
+      render partial: "shared/flash"
     end
   end
 

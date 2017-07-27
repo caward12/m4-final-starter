@@ -10,6 +10,9 @@ function bindShowUnreadButtonWithFilterLinks(){
 }
 
 function filterUnreadLinks(){
+  $(".false").each(function(){
+    $(this).show()
+  })
   $(".true").each(function(){
     $(this).hide()
   })
