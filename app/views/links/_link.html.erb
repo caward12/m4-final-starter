@@ -12,6 +12,8 @@
     <h5 class="top">TOP LINK</h5>
   <% elsif @hot_reads.include?(link.url) %>
     <h5 class="hot">HOT</h5>
+  <% else %>
+    <h5></h5>
   <% end %>
     <h3 class="title">Title: <%= link.title %></h3>
     <h4 class="url">URL: <%= link.url %></h4><br>

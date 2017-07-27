@@ -14,16 +14,11 @@ Capybara.register_driver :selenium do |app|
   )
 end
 # Add additional requires below this line. Rails is not loaded until this point!
-VCR.configure do |config|
-  config.cassette_library_dir = "fixtures/vcr_cassettes"
-  config.hook_into :webmock
-end
 
 def login_user(user)
   visit login_path
   fill_in "session[email]", with: user.email
   fill_in "session[password]", with: user.password
-  fill_in "session[password_confirmation]", with: user.password
   click_on "Log In"
 end
 
@@ -55,6 +50,8 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  config.infer_spec_type_from_file_location! # For RSpec 3 and up, 2 and below infer by file location
 
   #### Database cleaner strategy
   #### Copied from https://github.com/DatabaseCleaner/database_cleaner#rspec-with-capybara-example
