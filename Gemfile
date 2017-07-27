@@ -40,7 +40,3 @@ group :development, :test do
   gem 'selenium-webdriver', '~> 2.53.4'
 end
 
-group :test do
-  gem 'vcr'
-  gem 'webmock'
-end

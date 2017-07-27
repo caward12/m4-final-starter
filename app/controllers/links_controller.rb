@@ -1,13 +1,7 @@
 class LinksController < ApplicationController
-
-  # def new
-  #   @link = Link.new
-  # end
-
   def index
     @link = Link.new
     @links = current_user.links.reverse
-    @hot_reads = HotReadsService.hot_links
   end
 
   def create
@@ -29,7 +23,7 @@ class LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     if @link.update(link_params)
-      flash[:success] = "Successfully updated link"
+      flash[:notice] = "Successfully updated link"
       redirect_to root_path
     else
       flash[:notice] = @link.errors.full_messages.first
