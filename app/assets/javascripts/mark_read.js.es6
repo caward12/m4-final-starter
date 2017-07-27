@@ -7,15 +7,25 @@ function markAsRead(e) {
 
   var $link = $(this).parents('.link');
   var linkId = $link.data('link-id');
+  var url = $link.find('h4')[0].innerText.split(" ")[1]
+
 
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
     data: { read: true },
   }).then(updateLinkStatus)
+    .then(postToHotReads(url))
     .fail(displayFailure);
 }
 
+function postToHotReads(url){
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:3001/api/v1/links",
+    data: {url: url}
+  })
+}
 function updateLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(`Read: ${link.read}`)
   $(`.link[data-link-id=${link.id}] .read-links .mark-as-read`).remove()

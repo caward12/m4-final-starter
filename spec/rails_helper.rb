@@ -19,8 +19,14 @@ def login_user(user)
   visit login_path
   fill_in "session[email]", with: user.email
   fill_in "session[password]", with: user.password
-  fill_in "session[password_confirmation]", with: user.password
   click_on "Log In"
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -44,6 +50,8 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  config.infer_spec_type_from_file_location! # For RSpec 3 and up, 2 and below infer by file location
 
   #### Database cleaner strategy
   #### Copied from https://github.com/DatabaseCleaner/database_cleaner#rspec-with-capybara-example

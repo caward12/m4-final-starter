@@ -11,11 +11,9 @@
 <hr>
 <div class="filter">
   <h3>Filters</h3>
+  Filter: <input type="text" class="filter-links" id="q" placeholder="Search By Title or URL">
 
-  <%= form_tag("/", method: "get", class: "filter-links") do %>
-    <%= label_tag(:q, "filter for:") %>
-    <%= text_field_tag(:q) %>
-  <% end %>
+
   <%= link_to "Show Read" , "/", class: "show-read"%> &nbsp &nbsp
   <%= link_to "Show Unread" , "/", class: "show-unread"%>
   <hr>
