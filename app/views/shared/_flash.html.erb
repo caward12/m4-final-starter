@@ -1,7 +1,9 @@
 <div class="container">
-  <% flash.each do |type, message| %>
+  <div class="errors">
+    <% flash.each do |type, message| %>
     <% if message %>
-        <p><%= message %></p>
+    <p><%= message %></p>
     <% end %>
-  <% end %>
+    <% end %>
+  </div>
 </div>

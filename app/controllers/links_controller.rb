@@ -11,11 +11,12 @@ class LinksController < ApplicationController
   end
 
   def create
+    hot_reads = HotReadsService.hot_links
     @user = current_user
     link = @user.links.new(link_params)
     if link.save
       flash.now[:success] = "Successfully added a new link"
-      render partial: "link", locals: {link: link}, layout: false
+      render partial: "link", locals: {link: link, hot_reads: hot_reads}, layout: false
     else
       flash.now[:notice] = link.errors.full_messages.join(", ")
       render partial: "shared/flash"

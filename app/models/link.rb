@@ -18,4 +18,14 @@ class Link < ActiveRecord::Base
   def self.reverse
     order('id DESC')
   end
+
+  def status
+    if url == HotReadsService.hot_links[0]
+       "TOP LINK"
+    elsif HotReadsService.hot_links.include?(url)
+        "HOT"
+    else
+      ""
+    end
+  end
 end
